@@ -23,7 +23,9 @@ public:
 
 	Teacher();
 
-	Teacher(char input_subjects, vector<string>& input_score, string Name, string Last_name, string Surmame);
+	Teacher(char input_title, vector<string>& input_subjects, string Name, string Last_name, string Surmame);
+
+	Teacher(const Teacher& p);
 
 	~Teacher();
 
@@ -32,4 +34,10 @@ public:
 	void get_short_teacher_info();
 
 	void get_full_teacher_info();
+
+	int size_subjects();
+
+	char title();
+
+	string subjects(int j);
 };

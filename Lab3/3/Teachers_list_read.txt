@@ -1,0 +1,10 @@
+A Mathematics Thomas Clark Cooper
+S Russian_language Gilbert Perkins Hayes
+O English_language Frank Joseph Vasquez
+P Natural_sciences Howard Torres Black
+P Physics Alvin Lewis McCoy
+A Biology Jerry McLaughlin Murray
+A Databases Gilbert Perkins Houston
+O Literature Donald Carr Martinez
+S Culture_of_speech Scott Black Anderson
+P Linguistics Jack Nelson Lopez

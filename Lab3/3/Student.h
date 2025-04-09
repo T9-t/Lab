@@ -7,21 +7,27 @@ using namespace std;
 
 class Student :public Human {
 
-	vector<int>* score;
+	vector<double>* score;
 
 public:
 
 	Student();
 
-	Student(vector<int>& input_score, string Name, string Last_name, string Surmame);
+	Student(vector<double>& input_score, string Name, string Last_name, string Surmame);
+
+	Student(const Student& p);
 
 	~Student();
 
-	void add_score(int new_score);
+	void add_score(double new_score);
 
 	double get_average_score();
 
 	void get_short_student_info();
 
 	void get_full_student_info();
+
+	int size_score();
+
+	double score_num(int j);
 };
