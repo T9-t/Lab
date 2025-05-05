@@ -62,6 +62,15 @@ Complex& Complex::operator+ (const Complex& z) const{
 
 	return *result;
 }
+Complex Complex::operator* (int z) {
+
+	double new_re = *this->re * z;
+	double new_im = *this->im * z;
+
+	Complex* result = new Complex(new_re, new_im);
+
+	return *result;
+}
 
 Complex& Complex::operator+ (int r) const {
 

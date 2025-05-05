@@ -333,16 +333,15 @@ public:
 			return *a;
 		}
 	}
-	double operator() (int& cop) {
+	T& operator() (int cop) {
 	
-		double sum = 0.0;
-		if (not_zero == true) {
-			sum = this->scalar(*this->x0) + (this->scalar(*this->x1) * cop) + (this->scalar(*this->x2) * cop * cop) + (this->scalar(*this->x3) * cop * cop * cop);
+		T sum;
+		if (not_zero) {
+			sum = *this->x0 + (*this->x1 * cop) + (*this->x2 * cop * cop) + (*this->x3 * cop * cop * cop);
 		}
 		else {
-			sum = this->scalar(*this->x0);
+			sum = *this->x0;
 		}
-
 		return sum;
 	}
 

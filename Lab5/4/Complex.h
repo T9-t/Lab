@@ -42,6 +42,7 @@ public:
 	Complex operator-- (int);
 
 	Complex operator* (const Complex& z) const;
+	Complex operator* (int z);
 
 	Complex operator/ (const Complex& z) const;
 
