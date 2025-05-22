@@ -96,107 +96,52 @@ int main()
                 if (func == 1) {// Идти/Move
 
                     int x = 1, y = 0, x_2 = -1;
+                    int hero_x = Hero->get_x(), hero_y = Hero->get_y(), enemy1_x = Enemy_1->get_x(), enemy1_y = Enemy_1->get_y(), enemy2_x = Enemy_2->get_x(), enemy2_y = Enemy_2->get_y();
+
                     char move_x_y;
-                    int done = 0;
 
                     cout << "Where to go(l-left, d-down, u-up, r-right): ";
                     cin >> move_x_y;
 
                     if (move_x_y == 'd') {//down
 
-                        if (Hero->get_y() != Enemy_1->get_y() && Hero->get_x() != Enemy_1->get_x() - 1) {
-                            if (Hero->get_y() != Enemy_2->get_y() && Hero->get_x() != Enemy_2->get_x() - 1) {
+                        if ((hero_y != enemy1_y && hero_x != enemy1_x - 1) || (hero_y != enemy2_y && hero_x != enemy2_x - 1)) {
 
-                                Hero->move(x, y);
-                                done++;
-                            }
-                        }
-                        else if (done == 0) {
-                            if (Hero->get_y() != Enemy_2->get_y() && Hero->get_x() != Enemy_2->get_x() - 1) {
-                               
-                                Hero->move(x, y);
-                            }
-                            if (Hero->get_y() != Enemy_1->get_y() && Hero->get_x() != Enemy_1->get_x() - 1) {
-
-                                Hero->move(x, y);
-                            }
+                            Hero->move(x, y);
                         }
                         else {
                             cout << "The place is occupied" << endl;
                         }
-                        done = 0;
                     }
                     else if (move_x_y == 'u') {//up
 
-                        if (Hero->get_x() != Enemy_1->get_x() + 1 && Hero->get_y() != Enemy_1->get_y()) {
-                            if (Hero->get_x() != Enemy_2->get_x() + 1 && Hero->get_y() != Enemy_2->get_y()) {
+                        if ((hero_y != enemy1_y && hero_x != enemy1_x + 1) || (hero_y != enemy2_y && hero_x != enemy2_x + 1)) {
 
-                                Hero->move(x_2, y);
-                                done++;
-                            }
-                        }
-                        else if (done == 0) {
-                            if (Hero->get_x() != Enemy_2->get_x() + 1 && Hero->get_y() != Enemy_2->get_y() && done == 0) {
-                                
-                                Hero->move(x_2, y);
-                            }
-                            if (Hero->get_x() != Enemy_1->get_x() + 1 && Hero->get_y() != Enemy_1->get_y()) {
-
-                                Hero->move(x_2, y);
-                            }
+                            Hero->move(x_2, y);
                         }
                         else {
                             cout << "The place is occupied" << endl;
                         }
-                        done = 0;
                     }
                     else if (move_x_y == 'r') {//right
 
-                        if (Hero->get_y() != Enemy_1->get_y() - 1 && Hero->get_x() != Enemy_1->get_x()) {
-                            if (Hero->get_y() != Enemy_2->get_y() - 1 && Hero->get_x() != Enemy_2->get_x()) {
+                        if ((hero_y != enemy1_y - 1 && hero_x != enemy1_x) || (hero_y != enemy2_y - 1 && hero_x != enemy2_x)) {
 
-                                Hero->move(y, x);
-                                done++;
-                            }
-                        }
-                        else if (done == 0) {
-                            if (Hero->get_y() != Enemy_2->get_y() - 1 && Hero->get_x() != Enemy_2->get_x() && done == 0) {
-                                
-                                Hero->move(y, x);
-                            }
-                            if (Hero->get_y() != Enemy_1->get_y() - 1 && Hero->get_x() != Enemy_1->get_x()) {
-
-                                Hero->move(y, x);
-                            }
+                            Hero->move(y, x);
                         }
                         else {
                             cout << "The place is occupied" << endl;
                         }
-                        done = 0;
                     }
                     else if (move_x_y == 'l') {//left
 
-                        if (Hero->get_y() != Enemy_1->get_y() + 1 && Hero->get_x() != Enemy_1->get_x()) {
-                            if (Hero->get_y() != Enemy_2->get_y() + 1 && Hero->get_x() != Enemy_2->get_x()) {
+                        if ((hero_y != enemy1_y + 1 && hero_x != enemy1_x) || (hero_y != enemy2_y + 1 && hero_x != enemy2_x)) {
 
-                                Hero->move(y, x_2);
-                                done++;
-                            }
-                        }
-                        else if (done == 0) {
-                            if (Hero->get_y() != Enemy_2->get_y() + 1 && Hero->get_x() != Enemy_2->get_x() && done == 0) {
-                                
-                                Hero->move(y, x_2);
-                            }
-                            if (Hero->get_y() != Enemy_1->get_y() + 1 && Hero->get_x() != Enemy_1->get_x()) {
-
-                                Hero->move(y, x_2);
-                            }
+                            Hero->move(y, x_2);
                         }
                         else {
                             cout << "The place is occupied" << endl;
                         }
-                        done = 0;
                     }
                 }
                 if (func == 2) {// Подобрать оружие/Pick up a weapon
